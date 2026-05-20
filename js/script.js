@@ -336,20 +336,33 @@ function validarComuna() {
 function validarTelefono() {
     const telefono = document.getElementById("telefono").value.trim();
     const div = document.getElementById("telefono-msg");
+
     if (telefono == "") {
         div.innerText = "El teléfono es obligatorio";
         return false;
     }
-    if (telefono.length != 9) {
-        div.innerText = "Debe tener 9 dígitos";
+
+    // Permitir "+" al inicio
+    let numero = telefono;
+
+    if (telefono.startsWith("+")) {
+        numero = telefono.substring(1); // quitar el +
+    }
+
+    // Validar longitud (solo números)
+    if (numero.length != 11) {
+        div.innerText = "Debe tener 11 dígitos";
         return false;
     }
-    for (let i = 0; i < telefono.length; i++) {
-        if (!esNumero(telefono.charAt(i))) {
+
+    // Validar que el resto sean números
+    for (let i = 0; i < numero.length; i++) {
+        if (!esNumero(numero.charAt(i))) {
             div.innerText = "Solo debe contener números";
             return false;
         }
     }
+
     return true;
 }
 
