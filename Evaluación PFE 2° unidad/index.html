@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="container formulario">
+
+        <h1 class="text-center mb-4">Registro de Usuario</h1>
+
+        <form onsubmit="return validarFormulario()">
+
+            <!-- FILA 1 -->
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">Nombre de Usuario</label>
+
+                    <input type="text"
+                           id="username"
+                           class="form-control">
+
+                    <div id="username-msg" class="error"></div>
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <label class="form-label">Contraseña</label>
+
+                    <input type="password"
+                           id="password"
+                           class="form-control">
+
+                    <div id="password-msg" class="error"></div>
+
+                </div>
+
+                <div class="col-md-3 mb-3">
+
+                    <label class="form-label">Confirmar Contraseña</label>
+
+                    <input type="password"
+                           id="confirm-password"
+                           class="form-control">
+
+                    <div id="confirm-password-msg" class="error"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="col-md-4 mb-3">
+
+                    <label class="form-label">Calle</label>
+
+                    <input type="text"
+                           id="calle"
+                           class="form-control">
+
+                    <div id="calle-msg" class="error"></div>
+
+                </div>
+
+
+                <div class="col-md-2 mb-3">
+
+                    <label class="form-label">Número</label>
+
+                    <input type="text"
+                           id="numero"
+                           class="form-control">
+
+                    <div id="numero-msg" class="error"></div>
+
+                </div>
+
+
+
+                <div class="col-md-3 mb-3">
+
+                    <label class="form-label">Región</label>
+
+                    <select id="region"
+                            class="form-select"
+                            onchange="cargarComunas()">
+
+                        <option value="">Seleccione una región</option>
+
+                        <option value="Arica y Parinacota">Arica y Parinacota</option>
+                        <option value="Tarapacá">Tarapacá</option>
+                        <option value="Antofagasta">Antofagasta</option>
+                        <option value="Atacama">Atacama</option>
+                        <option value="Coquimbo">Coquimbo</option>
+                        <option value="Valparaíso">Valparaíso</option>
+                        <option value="Metropolitana">Metropolitana</option>
+                        <option value="OHiggins">O'Higgins</option>
+                        <option value="Maule">Maule</option>
+                        <option value="Ñuble">Ñuble</option>
+                        <option value="Biobío">Biobío</option>
+                        <option value="La Araucanía">La Araucanía</option>
+                        <option value="Los Ríos">Los Ríos</option>
+                        <option value="Los Lagos">Los Lagos</option>
+                        <option value="Aysén">Aysén</option>
+                        <option value="Magallanes">Magallanes</option>
+
+                    </select>
+
+                    <div id="region-msg" class="error"></div>
+
+                </div>
+
+  
+
+                <div class="col-md-3 mb-3">
+
+                    <label class="form-label">Comuna</label>
+
+                    <select id="comuna" class="form-select">
+
+                        <option value="">Seleccione comuna</option>
+
+                    </select>
+
+                    <div id="comuna-msg" class="error"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILA 3 -->
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">Teléfono</label>
+
+                    <input type="text"
+                           id="telefono"
+                           class="form-control">
+
+                    <div id="telefono-msg" class="error"></div>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">Página Web Personal</label>
+
+                    <input type="text"
+                           id="web"
+                           class="form-control">
+
+                    <div id="web-msg" class="error"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILA 4 -->
+
+                        
+ <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="hobby" class="form-label">Aficiones</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="hobby">
+                        <button onclick="agregarhobby()" class="btn btn-secondary" type="button">Agregar</button>
+                    </div>
+                    <div id="hobby-msg" class="error"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="hobby-list" class="form-label">Lista de Aficiones</label>
+                    <ul id="hobby-list" class="list-group"></ul>
+                </div>
+            </div>
+
+
+            <!-- BOTÓN -->
+            <div class="text-center">
+
+                <button type="submit"
+                        class="btn btn-primary px-5">
+
+                    Registrarse
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
